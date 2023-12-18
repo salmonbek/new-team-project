@@ -7,6 +7,21 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+/* Variables  */
+:root {
+  /* Main Background Colors */
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #eff7f2;
+  --bg-dark: #0b0706;
+  /* Common colors */
+  --dark-green: #70c174;
+  --light-green: #bef3c0;
+  --light-dark: #1d2130;
+  --grey-color: #525560;
+  --light-grey: #ebf0f9;
+  --secondary-grey: #e5e5e5;
+}
+
 *,
 ::before,
 ::after {
@@ -427,6 +442,142 @@ object {
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
+
+#what_we_do {
+  background-color: var(--primary-bg-color);
+  padding: 200px 0 96px;
+}
+
+.what_do_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.what_we_do_left {
+  display: flex;
+  gap: 25px;
+  width: 55%;
+}
+.what_we_do_right img {
+  width: 100%;
+}
+.what_we_do_line {
+  margin-top: 7px;
+  width: 150px;
+  height: 0;
+  border: 2px solid var(--light-dark);
+}
+
+.what_we_do_content {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+#environment {
+  padding: 96px 104px;
+  background: var(--secondary-bg-color);
+}
+.environment_container {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+.environment_cardblock {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.environment_card_top {
+  display: flex;
+  justify-content: space-between;
+  gap: 65px;
+}
+.environment_card_bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 65px;
+}
+
+.environment_card {
+  display: flex;
+  gap: 24px;
+}
+
+.envirnoment_card_content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.envirnoment_card_content h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #1d2130;
+}
+.envirnoment_card_content p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #525560;
+}
+
+@media (max-width:1265px) {
+  .environment_cardblock {
+    flex-direction: row;
+  }
+  .environment_card_top {
+    flex-direction: column;
+  }
+  .environment_card_bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .what_do_container {
+    align-items: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .what_do_container {
+    flex-direction: column;
+    align-items: start;
+  }
+  .what_we_do_left {
+    width: 100%;
+    flex-direction: column;
+  }
+  .what_we_do_line {
+    width: 72px;
+  }
+  .what_we_do_content {
+    gap: 25px;
+  }
+  .what_we_do_right {
+    width: 100%;
+  }
+  .environment_cardblock {
+    flex-direction: column;
+  }
+  #environment {
+    padding: 96px 0;
+  }
+}
+@media (max-width:500px) {
+  .what_we_do_left {
+    align-items: center;
+  }
+  .what_we_do_content {
+    text-align: center;
+  }
+  .what_we_do_content p {
+    text-align: center;
+  }
+}
 
 img,
 video {
